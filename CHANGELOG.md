@@ -1,3 +1,10 @@
+## 0.6.10 — Authorized Decryption workspace redesign
+
+- Rebuilt the Authorized Decryption tab into a unified, readable workspace.
+- Removed duplicated large Bento4/N_m3u8DL-RE key-entry layouts.
+- Added structured key review, add/remove/clear controls, masked key preview, and collapsible activity output.
+- Kept existing decryption backend fields and execution flow compatible with v0.6.8.
+
 # Changelog
 
 ## 0.6.8 — Persistent download controls

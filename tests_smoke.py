@@ -1,9 +1,9 @@
 from pathlib import Path
 import tempfile
 
-from media_downloader_studio.engines import ENGINES, classify_url, recommended_engine
-from media_downloader_studio.key_specs import parse_key_specs
-from media_downloader_studio.queue_manager import QueueItem, save_queue
+from twin_downloader.engines import ENGINES, classify_url, recommended_engine
+from twin_downloader.key_specs import parse_key_specs
+from twin_downloader.queue_manager import QueueItem, save_queue
 
 assert classify_url("https://youtu.be/FbXOsVByKmk") == "web"
 assert recommended_engine("https://youtu.be/FbXOsVByKmk") == "yt-dlp"
@@ -30,7 +30,7 @@ with tempfile.TemporaryDirectory() as td:
 print("Twin Downloader Pro v0.6 smoke tests: PASS")
 
 # Stop architecture contract: no blocking stdout PIPE and Windows Job Object hooks exist.
-runner = Path(__file__).parent / "src" / "media_downloader_studio" / "process_runner.py"
+runner = Path(__file__).parent / "src" / "twin_downloader" / "process_runner.py"
 text = runner.read_text(encoding="utf-8")
 assert "stdout=subprocess.PIPE" not in text
 assert "class _WindowsJob" in text
